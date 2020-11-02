@@ -1,17 +1,54 @@
+.my-modal.opened .modal-overlay,
+.my-modal.opened .modal-window {
+  opacity: 1;
+  z-index: 100;
+}
+
+.my-modal.opened .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.my-modal.opened .modal-window {
+  transform: translateY(100px);
+}
+
+.my-modal.hiding .modal-overlay,
+.my-modal.hiding .modal-window {
+  opacity: 1;
+  z-index: 100;
+}
+
+.my-modal.hiding .modal-overlay {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.my-modal.hiding .modal-window {
+  transform: translateY(-200px);
+}
+
+.modal-overlay,
+.modal-window {
+  opacity: 0;
+  z-index: -1;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color .2s ease-in
 }
 
 .modal-window {
   width: 600px;
   border-radius: 5px;
   background: #fff;
-  margin: 100px auto;
+  margin: 0 auto;
+  transform: translateY(-200px);
+  transition: transform .2s ease-in;
 }
 
 .modal-header {
