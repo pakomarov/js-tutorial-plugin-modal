@@ -86,11 +86,10 @@
         setTimeout(() => {
           modalElement.classList.remove('hiding');
           isClosing = false;
+          if (typeof options.onClose === "function") {
+            options.onClose();
+          }
         }, ANIMATION_SPEED);
-
-        if (typeof options.onClose === "function") {
-          options.onClose();
-        }
       },
       destroy() {
         if (isDestroyed) {
